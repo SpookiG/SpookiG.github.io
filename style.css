@@ -1,15 +1,51 @@
+/*general stylings*/
+html, body {
+    padding: 0;
+    margin: 0;
+    background-color: rgb(178, 212, 228);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+
+
+/*floating central page*/
+.page {
+    margin: 2rem 10%;
+    border: 5px solid rgb(236, 181, 117);
+    background-color: rgb(243, 233, 215);
+    border-radius: 2rem;
+}
+
+/*need a margined div to make sure content in the central page isn't to close to the sides and bottom*/
+.content {
+    margin: 2rem 1rem;
+}
+
+
+
+
+/*banner stylings*/
 .banner {
     display: flex;
-    background-color: DodgerBlue;
+    /*flex-direction: column;*/
+    border-top: 3px solid rgb(236, 181, 117);
+    border-bottom: 3px solid rgb(236, 181, 117);
+    background-color: rgb(236, 181, 117);
     width: 100%;
 }
 
 .banner-elem {
-    border: 1px solid #000000;
     text-align: center;
+    border-radius: .25rem;
     flex:1;
+
+    
 }
 
+
+/*button stylings, hopefully decoupled from the banner so I can add these wherever*/
 .button {
     background: #f0edff;
     cursor: pointer;
@@ -17,66 +53,45 @@
     transition: all 0.5s;
 }
 
-.button:hover {
-    background: #ee6eae;
+.button:hover { /*change colour*/
+    background: #ffadcf;
 }
 
-.button a {
+.button a { /*hide hyperlink stylings in buttons*/
     display: block;
     height: 100%;
     text-decoration: none;
     color: black;
 }
 
-.button div {
+.button div { /*set banner hight and text position*/
     height: 2rem;
     padding-top: .5rem;
     transition: all 0.5s;
 }
 
-.button:hover div {
+.button:hover div { /*change text size*/
     transform: translateY(-.4rem);
     font-size: 1.5rem;
 }
 
-.button span::before {
+.button span::before { /*add cute blobbies pointing to button text*/
     white-space: pre;
-    content: '(^\'O\')>      ';
+    content: '   (^\'O\')>      ';
     opacity: 0;
     transition: all 0.5s;
+    font-size: 0rem;
 }
 
 .button span::after {
     white-space: pre;
-    content: '      <(\'O\'^)';
+    content: '      <(\'O\'^)   ';
     opacity: 0;
     transition: all 0.5s;
+    font-size: 0rem;
 }
 
 .button:hover span::before, .button:hover span::after {
     opacity: 1;
-}
-
-
-
-
-
-/*.button span {
-    padding-top: 1rem;
-    transition: all 0.5s;
-}
-
-.button:hover span {
-    
-}*/
-
-
-
-html, body {
-    padding: 0;
-    margin: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-    text-align: center;
+    font-size: 1.5rem;
 }
