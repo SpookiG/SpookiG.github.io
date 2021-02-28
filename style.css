@@ -1,0 +1,82 @@
+.banner {
+    display: flex;
+    background-color: DodgerBlue;
+    width: 100%;
+}
+
+.banner-elem {
+    border: 1px solid #000000;
+    text-align: center;
+    flex:1;
+}
+
+.button {
+    background: #f0edff;
+    cursor: pointer;
+    height: fit-content;
+    transition: all 0.5s;
+}
+
+.button:hover {
+    background: #ee6eae;
+}
+
+.button a {
+    display: block;
+    height: 100%;
+    text-decoration: none;
+    color: black;
+}
+
+.button div {
+    height: 2rem;
+    padding-top: .5rem;
+    transition: all 0.5s;
+}
+
+.button:hover div {
+    transform: translateY(-.4rem);
+    font-size: 1.5rem;
+}
+
+.button span::before {
+    white-space: pre;
+    content: '(^\'O\')>      ';
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.button span::after {
+    white-space: pre;
+    content: '      <(\'O\'^)';
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.button:hover span::before, .button:hover span::after {
+    opacity: 1;
+}
+
+
+
+
+
+/*.button span {
+    padding-top: 1rem;
+    transition: all 0.5s;
+}
+
+.button:hover span {
+    
+}*/
+
+
+
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
