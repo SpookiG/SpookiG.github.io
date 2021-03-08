@@ -40,10 +40,19 @@ input {
 
 
 /*banner stylings*/
-.banner {
-    display: flex;
-    /*flex-direction: column;*/
-    width: 100%;
+@media (min-width : 650px) {
+    .banner {
+        display: flex;
+        width: 100%;
+    }
+}
+
+@media (max-width : 650px) {
+    .banner {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
 }
 
 .top-banner {
