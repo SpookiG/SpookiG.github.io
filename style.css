@@ -55,6 +55,14 @@ input {
     }
 }
 
+@media (max-device-width : /*650px*/17.2cm) {
+    .banner {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+}
+
 .top-banner {
     border-top: 3px solid rgb(236, 181, 117);
     border-bottom: 3px solid rgb(236, 181, 117);
