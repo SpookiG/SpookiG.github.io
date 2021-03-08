@@ -40,14 +40,14 @@ input {
 
 
 /*banner stylings*/
-@media (min-width : /*650px*/41rem) {
+@media (min-width : /*650px*/17.2cm) {
     .banner {
         display: flex;
         width: 100%;
     }
 }
 
-@media (max-width : /*650px*/41rem) {
+@media (max-width : /*650px*/17.2cm) {
     .banner {
         display: flex;
         flex-direction: column;
