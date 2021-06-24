@@ -5,14 +5,14 @@ window.onload = function() {
     let page = path.split("/").pop().split(".")[0];
     data.id = page;
 
-    //origin = "https://spookig.github.io/games.html";
     origin = window.parent.location;
-    if (window.location.protocol == "file:")
+    if (window.location.protocol === "file:")    // because everything about webdev and security checks changes if you're testing locally ugh
     {
         origin = "*";
     }
 
-    console.log("sent message to: " + origin);
-
-    parent.postMessage(data, origin); 
+    if (origin.startsWith("https://spookig.github.io") || origin === "*") // validate that the message is being sent to a trusted domain
+    {
+        parent.postMessage(data, origin); 
+    }
 }

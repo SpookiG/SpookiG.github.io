@@ -23,13 +23,13 @@
             <h2>Filters!</h2>
             <h4>Highlights contains the work I'm currently most proud of. Different skill sets may have different highlights.</h4>
 
-            <div class="banner mid-banner">
+            <div id="quality-banner" class="banner mid-banner" onchange="qualitySelect()">
                 <label class="banner-elem spaced"><input type="checkbox" checked><div class="button"><div>highlights</div></div></label>
-                <label class="banner-elem spaced"><input type="checkbox"><div class="button"><div>good games</div></div></label>
+                <label class="banner-elem spaced"><input type="checkbox"><div class="button"><div>good work</div></div></label>
                 <label class="banner-elem spaced"><input type="checkbox"><div class="button"><div>archive</div></div></label>
             </div>
 
-            <div class="banner mid-banner">
+            <div id="category-banner" class="banner mid-banner" onchange="categorySelect()">
                 <label class="banner-elem spaced"><input type="checkbox" checked><div class="button"><div>programming</div></div></label>
                 <label class="banner-elem spaced"><input type="checkbox"><div class="button"><div>art</div></div></label>
                 <label class="banner-elem spaced"><input type="checkbox"><div class="button"><div>music</div></div></label>
@@ -41,23 +41,10 @@
 
 
             <p>Games page in progress</p>
-            <h2>Highlights</h2>
-            <h4>Best bits</h4>
             </br>
-            <div id="highlights"></div>
-            <iframe src="games/9-aloneButNeverTruly.html" class="9-aloneButNeverTruly"></iframe>
-            <iframe src="games/9-aloneButNeverTruly.html" class="9-aloneButNeverTruly"></iframe>
-
-            <h2>Good games</h2>
-            <h4>Games that I enjoy playing</h4>
-            </br>
-
-            <iframe src="games/9-aloneButNeverTruly.html" class="9-aloneButNeverTruly"></iframe>
-
-            <h2>Archive</h2>
-            <h4>Everything!</h4>
-
-            <iframe src="games/9-aloneButNeverTruly.html" class="9-aloneButNeverTruly"></iframe>
+            <div id="frames">
+                <iframe id="9-aloneButNeverTruly" data-highlight="programming" data-good="art music"></iframe>
+            </div>
         </div>
     </div>
     
