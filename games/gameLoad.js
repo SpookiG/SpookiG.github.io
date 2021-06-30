@@ -166,10 +166,14 @@ function loadSelections() {
 // todo:
 /*
 
-2. load iframe and check tags to determine whether to hide ("Highlights-Programming" "Good-Art_Design")
-3. use this on current default page
-4. buttons to select goodness and area of work
 5. Actually make the game info pages
+    c. images in each segment & in summary
+    g. change layout depending on if in frame or on the actual page?
+
+6. Add an other hobbies segment to my website (linking to photography, shaders, etc)
+7. Big website summary
+8. Add my name to that summary
+
 
 
 

@@ -1,6 +1,13 @@
+var height = 0;
+
 window.onload = function() {
+    height += document.body.scrollHeight;
+    sendPageData();
+};
+
+function sendPageData() {
     let data = new Object();
-    data.height = document.body.scrollHeight;
+    data.height = height;
     let path = window.location.pathname;
     let page = path.split("/").pop().split(".")[0];
     data.id = page;
@@ -15,4 +22,20 @@ window.onload = function() {
     {
         parent.postMessage(data, origin); 
     }
+}
+
+
+
+function collapse(toggleElement) {
+    toggleElement.classList.toggle("active");
+    var content = toggleElement.nextElementSibling;
+    if (content.style.maxHeight){
+      content.style.maxHeight = null;
+      height -= content.scrollHeight;
+    } else {
+      content.style.maxHeight = content.scrollHeight + "px";
+      height += content.scrollHeight;
+    }
+
+    sendPageData();
 }
