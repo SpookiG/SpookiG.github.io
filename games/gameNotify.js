@@ -12,10 +12,12 @@ function sendPageData() {
     let page = path.split("/").pop().split(".")[0];
     data.id = page;
 
-    origin = window.parent.location;
+    let origin;
     if (window.location.protocol === "file:")    // because everything about webdev and security checks changes if you're testing locally ugh
     {
         origin = "*";
+    } else {
+        origin = window.parent.location.hostname;
     }
 
     console.log(origin);
