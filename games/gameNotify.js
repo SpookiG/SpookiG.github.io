@@ -18,6 +18,8 @@ function sendPageData() {
         origin = "*";
     }
 
+    console.log(origin);
+
     if (origin.startsWith("https://spookig.github.io") || origin === "*") // validate that the message is being sent to a trusted domain
     {
         parent.postMessage(data, origin); 
