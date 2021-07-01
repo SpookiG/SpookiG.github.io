@@ -20,7 +20,7 @@ function sendPageData() {
         origin = window.parent.location.hostname;
     }
 
-    console.log(origin);
+    console.log("https://" + origin + window.parent.location.pathname);
 
     if (origin === "spookig.github.io" || origin === "*") // validate that the message is being sent to a trusted domain
     {
