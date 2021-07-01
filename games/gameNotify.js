@@ -24,7 +24,7 @@ function sendPageData() {
 
     if (origin === "spookig.github.io" || origin === "*") // validate that the message is being sent to a trusted domain
     {
-        parent.postMessage(data, origin); 
+        parent.postMessage(data, "https://" + origin + window.parent.location.pathname); 
     }
 }
 
