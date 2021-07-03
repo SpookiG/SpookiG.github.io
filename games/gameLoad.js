@@ -169,6 +169,7 @@ function loadSelections() {
 5. Actually make the game info pages
     c. images in each segment & in summary
     g. change layout depending on if in frame or on the actual page?
+    h. some bugs when resizing the window (if I css styled the background of frames would that matter?)
 
 6. Add an other hobbies segment to my website (linking to photography, shaders, etc)
 7. Big website summary

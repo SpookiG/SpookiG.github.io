@@ -17,14 +17,14 @@ function sendPageData() {
     {
         origin = "*";
     } else {
-        origin = window.parent.location.hostname;
+        origin = "https://" + window.parent.location.hostname + window.parent.location.pathname;
     }
 
-    console.log("https://" + origin + window.parent.location.pathname);
+    //console.log(origin);
 
-    if (origin === "spookig.github.io" || origin === "*") // validate that the message is being sent to a trusted domain
+    if (origin.startsWith("https://spookig.github.io") || origin === "*") // validate that the message is being sent to a trusted domain
     {
-        parent.postMessage(data, "https://" + origin + window.parent.location.pathname); 
+        parent.postMessage(data, origin); 
     }
 }
 

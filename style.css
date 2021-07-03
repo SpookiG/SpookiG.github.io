@@ -91,6 +91,14 @@ input {
     margin: 0 .2%;
 }
 
+.bottom {
+    position: absolute;
+    bottom:   0;
+    width: calc(100% - 6px);
+    border: 3px solid rgb(236, 181, 117);
+    border-radius: .25rem;
+}
+
 
 /*button stylings, hopefully decoupled from the banner so I can add these wherever*/
 .button {
@@ -171,11 +179,12 @@ input:checked + .button div { /*change text size*/
 
 .game-image {
     flex:1;
-    border: 3px solid rgb(236, 181, 117);
+    /* border: 3px solid rgb(236, 181, 117); */
 }
 
 .game-details {
     flex:2;
+    position: relative;
 }
 
 
@@ -201,16 +210,39 @@ input:checked + .button div { /*change text size*/
     text-align: left;
     outline: none;
     font-size: 15px;
-  }
+}
   
-  .active, .collapsible:hover {
+.active, .collapsible:hover {
     background-color: #555;
-  }
+}
   
-  .collapsable-content {
+.collapsable-content {
     padding: 0 18px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.2s ease-out;
-    background-color: #f1f1f1;
-  }
+    
+    background-color: rgb(243, 233, 215);
+}
+
+
+
+  /* css for gameplay etc images */
+
+.clickable-image {
+    
+    border: 3px solid rgb(236, 181, 117);
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 95%;
+}
+  
+.clickable-image:hover {opacity: 0.7;}
+
+.image-collapsable {
+    width: 95%;
+    padding: .25rem;
+    font-size: .8rem;
+    border-radius: .2rem;
+}
