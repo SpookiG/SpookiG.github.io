@@ -1,14 +1,17 @@
 var frameHeightLookup;
+var frameActive;
 var qualitySelection;
 var categorySelection;
 
 document.addEventListener("DOMContentLoaded", function(){
     frameHeightLookup = new Object();
+    frameActive = new Object();
     let frames = document.getElementsByTagName("iframe");
     
     Array.prototype.forEach.call(frames, frame => {
         let frameKey = frame.getAttribute("class");
-        frameHeightLookup[frameKey] = "0px";
+        frameHeightLookup[frameKey] = null;
+        frameActive[frameKey] = false;
     });
 
     qualitySelection = null;
@@ -38,10 +41,13 @@ document.addEventListener("DOMContentLoaded", function(){
 
 window.onmessage = function(mess) {
     let frameKey = mess.data.id;
+    let firstLoad = frameHeightLookup[frameKey] == null; // double equals not triple because I think this is normally undefined not null
     frameHeightLookup[frameKey] = mess.data.height + "px";
 
-    let frame = document.getElementById(frameKey);
-    frame.style.height = frameHeightLookup[frameKey];
+    if (frameActive[frameKey] || firstLoad) {
+        let frame = document.getElementById(frameKey);
+        frame.style.height = frameHeightLookup[frameKey];
+    }
 }
 
 
@@ -49,6 +55,7 @@ window.onmessage = function(mess) {
 
 function hideFrame(frame) {
     frame.style.height = "0px";
+    frameActive[frame.id] = false;
 }
 
 function showFrame(frame) {
@@ -57,6 +64,7 @@ function showFrame(frame) {
     frame.src = srcDirectory + "/" + frame.id + ".html";
     let frameKey = frame.id;
     frame.style.height = frameHeightLookup[frameKey];
+    frameActive[frameKey] = true;
 }
 
 
@@ -167,9 +175,12 @@ function loadSelections() {
 /*
 
 5. Actually make the game info pages
-    c. images in each segment & in summary
     g. change layout depending on if in frame or on the actual page?
-    h. some bugs when resizing the window (if I css styled the background of frames would that matter?)
+    h. style the background of frames to match parent colour
+    i. edit css on expanding images to fit what I want (fill frame properly, fill full screen)
+    j. edit css names and stuff on dropdowns too (change colours)
+    k. get images to auto sync with the expand tag (so I don't need to add onclicks to all the html)
+    l. same with dropdown buttons
 
 6. Add an other hobbies segment to my website (linking to photography, shaders, etc)
 7. Big website summary

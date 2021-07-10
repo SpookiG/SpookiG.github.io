@@ -5,6 +5,11 @@ window.onload = function() {
     sendPageData();
 };
 
+window.onresize = function() {
+    height = document.body.scrollHeight;
+    sendPageData();
+}
+
 function sendPageData() {
     let data = new Object();
     data.height = height;
@@ -42,4 +47,25 @@ function collapse(toggleElement) {
     }
 
     sendPageData();
+}
+
+
+
+
+function displayImage(image) {
+    let modal = document.getElementById("myModal");
+    let modalImg = document.getElementById("modalImage");
+    let captionText = document.getElementById("caption");
+
+    modal.onclick = hideImage;
+    modal.style.display = "block";
+    modalImg.src = image.src;
+    captionText.innerHTML = image.alt;
+    
+}
+
+function hideImage() {
+    let modal = document.getElementById("myModal");
+    modal.style.display = "none";
+    modal.onclick = null;
 }
