@@ -1,6 +1,23 @@
 var height = 0;
 
 window.onload = function() {
+    if (window === window.parent) {
+        let page = document.getElementById("page");
+        page.classList.add("page");
+        let content = document.getElementById("content");
+        content.classList.add("content");
+
+        document.body.classList.remove("iframe-colour");
+    } else {
+        let page = document.getElementById("page");
+        page.classList.remove("page");
+        let content = document.getElementById("content");
+        content.classList.remove("content");
+
+        document.body.classList.add("iframe-colour");
+    }
+
+
     height += document.body.scrollHeight;
     sendPageData();
 };

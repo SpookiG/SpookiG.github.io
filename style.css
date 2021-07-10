@@ -1,9 +1,11 @@
 /*general stylings*/
-html, body {
+body {
     padding: 0;
     margin: 0;
     background-color: rgb(178, 212, 228);
 }
+
+
 
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
@@ -33,6 +35,11 @@ input {
     border: 5px solid rgb(236, 181, 117);
     background-color: rgb(243, 233, 215);
     border-radius: 2rem;
+}
+
+/* for nested iframes */
+.iframe-colour {
+    background-color: rgb(243, 233, 215);
 }
 
 /*need a margined div to make sure content in the central page isn't to close to the sides and bottom*/
@@ -171,9 +178,9 @@ input:checked + .button div { /*change text size*/
 /**/
 .game-box {
     display: flex;
-    border-top: 3px solid rgb(236, 181, 117);
+    /* border-top: 3px solid rgb(236, 181, 117);
     border-bottom: 3px solid rgb(236, 181, 117);
-    background-color: rgb(243, 233, 215);;
+    background-color: rgb(243, 233, 215);; */
     width: 100%;
 }
 
@@ -222,7 +229,7 @@ input:checked + .button div { /*change text size*/
     overflow: hidden;
     transition: max-height 0.2s ease-out;
     
-    background-color: rgb(243, 233, 215);
+    /* background-color: rgb(243, 233, 215); */
 }
 
 
