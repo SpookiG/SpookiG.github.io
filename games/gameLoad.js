@@ -175,10 +175,6 @@ function loadSelections() {
 /*
 
 5. Actually make the game info pages
-    g. change layout depending on if in frame or on the actual page?
-    h. style the background of frames to match parent colour
-    i. edit css on expanding images to fit what I want (fill frame properly, fill full screen)
-    j. edit css names and stuff on dropdowns too (change colours)
     k. get images to auto sync with the expand tag (so I don't need to add onclicks to all the html)
     l. same with dropdown buttons
 
