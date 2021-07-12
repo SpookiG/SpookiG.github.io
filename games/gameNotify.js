@@ -1,6 +1,7 @@
 var height = 0;
 
 window.onload = function() {
+    // change webpage CSS depending on if in an iframe or not
     if (window === window.parent) {
         let page = document.getElementById("page");
         page.classList.add("page");
@@ -18,6 +19,18 @@ window.onload = function() {
     }
 
 
+    // attach onclick funtionality to collapsable content and expandable images here so it isn't needed in the html
+    let collapsables = document.getElementsByClassName("collapsible");
+    Array.prototype.forEach.call(collapsables, collapsable => {
+        collapsable.onclick = function() { collapse(collapsable); };
+    });
+
+    let expandables = document.getElementsByClassName("clickable-image");
+    Array.prototype.forEach.call(expandables, expandable => {
+        expandable.onclick = function() { displayImage(expandable); };
+    });
+
+    // send height of page to parent
     height += document.body.scrollHeight;
     sendPageData();
 };
