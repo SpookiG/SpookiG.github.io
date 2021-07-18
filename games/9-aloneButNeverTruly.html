@@ -10,6 +10,8 @@
 <body>
     <div id="page">
         <div id="content">
+
+            <!-- Main heading -->
             <div class="game-box">
                 <div class="game-image">
                     <img class="clickable-image" src="images/9a.png" alt="gameplay image">
@@ -21,8 +23,9 @@
                 </div>
                 <div class="game-details">
                     <h2>Alone but never truly</h2>
-                    This is a game about finding yourself. How you do that is something you will need to figure out!
-                    </br></br></br></br></br></br>
+                    <p>This is a game about finding yourself. How you do that is something you will need to figure out!</p>
+                    <p>Unity game</br>Team of 3 (including me)</p>
+                    </br></br></br></br></br>
         
                     <div class="banner top-banner bottom">
                         <div class="banner-elem button"><a href="9-aloneButNeverTruly.html" target="_top"><div><span>Info!</span></div></a></div>
@@ -33,18 +36,51 @@
                 </div>
             </div>
             </br>
-            <button class="collapsible">Programming contributions</button>
+
+            <!-- Collapsable sub-headings -->
+            <button class="collapsible">Programming contributions (spoilers)</button>
             <div class="collapsable-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <div class="game-box">
+                    <div class="game-image"></div>
+                    <div class="game-details">
+                        <h3>Background looping and parallax</h3>
+                        <p>Created scripts to loop the background obsticals forever, with parallax. Used Unity's PlayerPrefs saving system and a system diagnostics check to successfully have two open instances of the same game interact with itself. Used compile time checks to make this instance interaction mechanic testable in the Unity Editor.</p>
+                    </div>
+                </div>
+                </br>
+
+                <div class="game-box">
+                    <div class="game-image">
+                        <img class="clickable-image" src="images/9b.png" alt="gameplay image">
+                    </div>
+                    <div class="game-details">
+                        <h3>Interaction between multiple open game instances</h3>
+                        <p>Used Unity's PlayerPrefs saving system and a system diagnostics check to successfully have two open instances of the same game interact with itself. Used compile time checks to make this instance interaction mechanic testable in the Unity Editor.</p>
+                    </div>
+                </div>
+                </br>
+
+                <div class="game-box">
+                    <div class="game-image"></div>
+                    <div class="game-details">
+                        <h3>Cutscenes</h3>
+                        <p>Used the cutscene management system from the previous game.</p>
+                    </div>
+                </div>
             </div>
-            <button class="collapsible">Design contributions</button>
+
+
+            <button class="collapsible">Design contributions (spoilers)</button>
             <div class="collapsable-content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                <p>Discussed game ideas and came up with a meta puzzle as the core idea for the game.</p>
             </div>
+
+
         </div>
     </div>
 
-
+    
+    <!-- Fullscreen image thingy -->
     <div id="myModal" class="modal">
         <img class="modal-image" id="modalImage">
         <div id="caption"></div>

@@ -2,6 +2,7 @@ var frameHeightLookup;
 var frameActive;
 var qualitySelection;
 var categorySelection;
+var loaded = false;
 
 document.addEventListener("DOMContentLoaded", function(){
     frameHeightLookup = new Object();
@@ -10,8 +11,8 @@ document.addEventListener("DOMContentLoaded", function(){
     
     Array.prototype.forEach.call(frames, frame => {
         let frameKey = frame.getAttribute("class");
-        frameHeightLookup[frameKey] = null;
-        frameActive[frameKey] = false;
+        console.log(frameKey);
+        frameActive[frameKey] = true;
     });
 
     qualitySelection = null;
@@ -19,9 +20,9 @@ document.addEventListener("DOMContentLoaded", function(){
     updateQualitySelection();
     updateCategorySelection();
     loadSelections();
-    
 
     //alert(frames[0].style.height.toString());
+    loaded = true;
     
 });
 
@@ -41,12 +42,21 @@ document.addEventListener("DOMContentLoaded", function(){
 
 window.onmessage = function(mess) {
     let frameKey = mess.data.id;
-    let firstLoad = frameHeightLookup[frameKey] == null; // double equals not triple because I think this is normally undefined not null
     frameHeightLookup[frameKey] = mess.data.height + "px";
 
-    if (frameActive[frameKey] || firstLoad) {
-        let frame = document.getElementById(frameKey);
-        frame.style.height = frameHeightLookup[frameKey];
+    adjustFrameSize(frameKey);
+}
+
+
+function adjustFrameSize(frameKey) {
+    if (frameActive[frameKey]) {
+        if (loaded) {
+            let frame = document.getElementById(frameKey);
+            frame.style.height = frameHeightLookup[frameKey];
+        } else {
+            console.log("yo");
+            setTimeout(function() { adjustFrameSize(frameKey) }, 50);
+        }
     }
 }
 
@@ -60,8 +70,11 @@ function hideFrame(frame) {
 
 function showFrame(frame) {
     // height = iframe content size
-    let srcDirectory = window.location.pathname.split("/").pop().split(".")[0]; // maybe move somewhere else later for efficiency
-    frame.src = srcDirectory + "/" + frame.id + ".html";
+    if (frame.src === "") {
+        let srcDirectory = window.location.pathname.split("/").pop().split(".")[0]; // maybe move somewhere else later for efficiency
+        frame.src = srcDirectory + "/" + frame.id + ".html";
+    }
+    
     let frameKey = frame.id;
     frame.style.height = frameHeightLookup[frameKey];
     frameActive[frameKey] = true;
@@ -174,10 +187,8 @@ function loadSelections() {
 // todo:
 /*
 
-5. Actually make the game info pages
-    k. get images to auto sync with the expand tag (so I don't need to add onclicks to all the html)
-    l. same with dropdown buttons
-
+5.5 adjustments friend suggested
+    remove games page in progress as well lol
 6. Add an other hobbies segment to my website (linking to photography, shaders, etc)
 7. Big website summary
 8. Add my name to that summary

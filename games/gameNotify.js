@@ -15,6 +15,8 @@ window.onload = function() {
         let content = document.getElementById("content");
         content.classList.remove("content");
 
+        content.insertAdjacentHTML('afterbegin', '</br></br></br><div class="frame-separator"></div></br></br>');
+
         document.body.classList.add("iframe-colour");
     }
 

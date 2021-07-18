@@ -1,8 +1,16 @@
+/* font */
+@font-face { 
+    /* licence at /fonts/OFL.txt */
+    font-family: Vidaloka; src: url('fonts/Vidaloka-Regular.ttf');
+}
+
+
 /*general stylings*/
 body {
     padding: 0;
     margin: 0;
     background-color: rgb(178, 212, 228);
+    font-family: Vidaloka;
 }
 
 
@@ -40,6 +48,10 @@ input {
 /* for nested iframes */
 .iframe-colour {
     background-color: rgb(243, 233, 215);
+}
+
+.frame-separator {
+    border-top: 4px solid rgb(236, 181, 117);
 }
 
 /*need a margined div to make sure content in the central page isn't to close to the sides and bottom*/
@@ -92,6 +104,7 @@ input {
 .banner-elem {
     text-align: center;
     flex:1;
+    font-size: 1.2rem;
 }
 
 .spaced {
