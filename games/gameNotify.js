@@ -23,12 +23,12 @@ window.onload = function() {
 
     // attach onclick funtionality to collapsable content and expandable images here so it isn't needed in the html
     let collapsables = document.getElementsByClassName("collapsible");
-    Array.prototype.forEach.call(collapsables, collapsable => {
+    Array.prototype.forEach.call(collapsables, function(collapsable) {
         collapsable.onclick = function() { collapse(collapsable); };
     });
 
     let expandables = document.getElementsByClassName("clickable-image");
-    Array.prototype.forEach.call(expandables, expandable => {
+    Array.prototype.forEach.call(expandables, function(expandable) {
         expandable.onclick = function() { displayImage(expandable); };
     });
 

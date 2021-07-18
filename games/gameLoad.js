@@ -9,9 +9,8 @@ document.addEventListener("DOMContentLoaded", function(){
     frameActive = new Object();
     let frames = document.getElementsByTagName("iframe");
     
-    Array.prototype.forEach.call(frames, frame => {
-        let frameKey = frame.getAttribute("class");
-        console.log(frameKey);
+    Array.prototype.forEach.call(frames, function(frame) {
+        let frameKey = frame.id;
         frameActive[frameKey] = true;
     });
 
@@ -105,7 +104,7 @@ function updateQualitySelection() {
     // build up a set containing the current form selection
     let qualityForm = document.getElementById("quality-banner").getElementsByTagName("input");
     let formSelection = new Set();
-    Array.prototype.forEach.call(qualityForm, item => {
+    Array.prototype.forEach.call(qualityForm, function(item) {
         if (item.checked) {
             formSelection.add(item.parentNode.innerText);
         }
@@ -113,7 +112,7 @@ function updateQualitySelection() {
 
     // remove current selected and check & set if a new selected has been made (for context, only one quality selection can be selected at a time)
     formSelection.delete(qualitySelection);
-    Array.prototype.forEach.call(qualityForm, item => {                           // Have to do this roundabout check because ie doesn't support sets very much
+    Array.prototype.forEach.call(qualityForm, function(item) {                           // Have to do this roundabout check because ie doesn't support sets very much
         if (item.checked && formSelection.has(item.parentNode.innerText)) {
             qualitySelection = item.parentNode.innerText;
         }
@@ -125,7 +124,7 @@ function updateQualitySelection() {
     }
 
     // apply changes back to form
-    Array.prototype.forEach.call(qualityForm, item => {
+    Array.prototype.forEach.call(qualityForm, function(item) {
         if (item.parentNode.innerText === qualitySelection) {
             item.checked = true;
         } else {
@@ -138,7 +137,7 @@ function updateCategorySelection() {
     // build up a set containing the current form selection
     let categoryForm = document.getElementById("category-banner").getElementsByTagName("input");
     let formSelection = new Set();
-    Array.prototype.forEach.call(categoryForm, item => {
+    Array.prototype.forEach.call(categoryForm, function(item) {
         if (item.checked) {
             formSelection.add(item.parentNode.innerText);
         }
@@ -148,7 +147,7 @@ function updateCategorySelection() {
 
 function loadSelections() {
     let frames = document.getElementById("frames").getElementsByTagName("iframe");
-    Array.prototype.forEach.call(frames, frame => {
+    Array.prototype.forEach.call(frames, function(frame) {
         // get 
         let highlightedCategories = frame.getAttribute('data-highlight').split(" ");
         let goodCategories = frame.getAttribute('data-good').split(" ");
@@ -158,7 +157,7 @@ function loadSelections() {
             visible = true;
         } else {
             if (qualitySelection === "good work") {
-                Array.prototype.forEach.call(goodCategories, category => {
+                Array.prototype.forEach.call(goodCategories, function(category) {
                     if (categorySelection.has(category)) {
                         visible = true;
                     }
@@ -166,7 +165,7 @@ function loadSelections() {
             }
 
             // no need for a qualitySelection === highlights check here because highlights are also good work
-            Array.prototype.forEach.call(highlightedCategories, category => {
+            Array.prototype.forEach.call(highlightedCategories, function(category) {
                 if (categorySelection.has(category)) {
                     visible = true;
                 }

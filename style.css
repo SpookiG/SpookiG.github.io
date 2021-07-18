@@ -254,6 +254,7 @@ input:checked + .button div { /*change text size*/
     
     border: 3px solid rgb(236, 181, 117);
     border-radius: 1rem;
+    background-color: rgb(236, 181, 117);
     cursor: pointer;
     transition: 0.3s;
     width: 95%;
