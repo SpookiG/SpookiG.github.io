@@ -186,8 +186,8 @@ function loadSelections() {
 // todo:
 /*
 
-5.5 adjustments friend suggested
-    remove games page in progress as well lol
+5.6 add all images to iframes
+5.7 lazy load iframes? Depends how slow games page ends up
 6. Add an other hobbies segment to my website (linking to photography, shaders, etc)
 7. Big website summary
 8. Add my name to that summary
