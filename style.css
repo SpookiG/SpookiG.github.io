@@ -259,6 +259,10 @@ input:checked + .button div { /*change text size*/
     transition: 0.3s;
     width: 95%;
 }
+
+.pixel-art {
+    image-rendering: crisp-edges;
+}
   
 .clickable-image:hover {opacity: 0.7;}
 
@@ -292,7 +296,9 @@ input:checked + .button div { /*change text size*/
     display: block;
     padding-top: 5%;
     max-width: 80%;
+    min-width: 30%;
     max-height: calc(95% - 100px);
+    image-rendering: crisp-edges;
   }
   
   /* Caption of Modal Image */

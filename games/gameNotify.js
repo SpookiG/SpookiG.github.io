@@ -1,4 +1,5 @@
 var height = 0;
+var sendResizeMessage = true;
 
 window.onload = function() {
     // change webpage CSS depending on if in an iframe or not
@@ -38,8 +39,10 @@ window.onload = function() {
 };
 
 window.onresize = function() {
-    height = document.body.scrollHeight;
-    sendPageData();
+    if (sendResizeMessage) {
+        height = document.body.scrollHeight;
+        sendPageData();
+    }
 }
 
 function sendPageData() {
@@ -71,14 +74,30 @@ function collapse(toggleElement) {
     toggleElement.classList.toggle("active");
     var content = toggleElement.nextElementSibling;
     if (content.style.maxHeight){
-      content.style.maxHeight = null;
-      height -= content.scrollHeight;
+        content.style.maxHeight = null;
+        height -= content.scrollHeight;
+
+        parentResize(content, -content.scrollHeight);
     } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-      height += content.scrollHeight;
+        content.style.maxHeight = content.scrollHeight + "px";
+        height += content.scrollHeight;
+
+        parentResize(content, content.scrollHeight);
     }
 
+    sendResizeMessage = false;
+    setTimeout(function() { sendResizeMessage = true; }, 50);
     sendPageData();
+}
+
+function parentResize(content, heightDifference) {
+    let parentContainer = content.parentElement.closest(".collapsable-content");
+    if (parentContainer != null) {
+        let oldHeight = parseInt(content.style.maxHeight);
+        parentContainer.style.maxHeight = (oldHeight + heightDifference) + "px";
+        //height += heightDifference;
+        parentResize(parentContainer, heightDifference);
+    }
 }
 
 

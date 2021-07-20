@@ -43,6 +43,8 @@ window.onmessage = function(mess) {
     let frameKey = mess.data.id;
     frameHeightLookup[frameKey] = mess.data.height + "px";
 
+    console.log(mess.data.height);
+
     adjustFrameSize(frameKey);
 }
 
@@ -187,6 +189,9 @@ function loadSelections() {
 /*
 
 5.6 add all images to iframes
+    art
+    design
+    programming
 5.7 lazy load iframes? Depends how slow games page ends up
 6. Add an other hobbies segment to my website (linking to photography, shaders, etc)
 7. Big website summary
