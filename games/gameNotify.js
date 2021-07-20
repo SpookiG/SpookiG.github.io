@@ -93,8 +93,15 @@ function collapse(toggleElement) {
 function parentResize(content, heightDifference) {
     let parentContainer = content.parentElement.closest(".collapsable-content");
     if (parentContainer != null) {
-        let oldHeight = parseInt(content.style.maxHeight);
+        let oldHeight = 0;
+        if (parentContainer.style.maxHeight != "") {
+            oldHeight = parseInt(parentContainer.style.maxHeight);
+        }
+
         parentContainer.style.maxHeight = (oldHeight + heightDifference) + "px";
+        console.log(heightDifference);
+        console.log(oldHeight + " + " + heightDifference + " = " + parentContainer.style.maxHeight);
+
         //height += heightDifference;
         parentResize(parentContainer, heightDifference);
     }
