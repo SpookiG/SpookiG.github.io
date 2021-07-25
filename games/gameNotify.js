@@ -10,6 +10,12 @@ window.onload = function() {
         content.classList.add("content");
 
         document.body.classList.remove("iframe-colour");
+
+        let expandables = document.getElementsByClassName("clickable-image");
+        Array.prototype.forEach.call(expandables, function(expandable) {
+            expandable.onclick = function() { displayImage(expandable); };
+        });
+
     } else {
         let page = document.getElementById("page");
         page.classList.remove("page");
@@ -19,6 +25,11 @@ window.onload = function() {
         content.insertAdjacentHTML('afterbegin', '</br></br></br><div class="frame-separator"></div></br></br>');
 
         document.body.classList.add("iframe-colour");
+
+        let expandables = document.getElementsByClassName("clickable-image");
+        Array.prototype.forEach.call(expandables, function(expandable) {
+            expandable.onclick = function() { sendImageToParent(expandable); };
+        });
     }
 
 
@@ -28,10 +39,7 @@ window.onload = function() {
         collapsable.onclick = function() { collapse(collapsable); };
     });
 
-    let expandables = document.getElementsByClassName("clickable-image");
-    Array.prototype.forEach.call(expandables, function(expandable) {
-        expandable.onclick = function() { displayImage(expandable); };
-    });
+    
 
     // send height of page to parent
     height += document.body.scrollHeight;
@@ -47,11 +55,16 @@ window.onresize = function() {
 
 function sendPageData() {
     let data = new Object();
+    data.type = "pageData";
     data.height = height;
     let path = window.location.pathname;
     let page = path.split("/").pop().split(".")[0];
     data.id = page;
 
+    sendMessage(data);
+}
+
+function sendMessage(mess) {
     let origin;
     if (window.location.protocol === "file:")    // because everything about webdev and security checks changes if you're testing locally ugh
     {
@@ -64,7 +77,7 @@ function sendPageData() {
 
     if (origin.startsWith("https://spookig.github.io") || origin === "*") // validate that the message is being sent to a trusted domain
     {
-        parent.postMessage(data, origin); 
+        parent.postMessage(mess, origin); 
     }
 }
 
@@ -119,7 +132,15 @@ function displayImage(image) {
     modal.style.display = "block";
     modalImg.src = image.src;
     captionText.innerHTML = image.alt;
-    
+}
+
+function sendImageToParent(image) {
+    let data = new Object();
+    data.type = "expandImage";
+    data.src = image.src;
+    data.alt = image.alt;
+
+    sendMessage(data);
 }
 
 function hideImage() {

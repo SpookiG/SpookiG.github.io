@@ -290,13 +290,14 @@ input:checked + .button div { /*change text size*/
     overflow: auto; /* Enable scroll if needed */
     background-color: rgb(0,0,0); /* Fallback color */
     background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+    cursor: pointer;
   }
   
   /* Modal Content (image) */
   .modal-image {
     margin: auto;
     display: block;
-    padding-top: 5%;
+    padding-top: 3%;
     max-width: 80%;
     min-width: 30%;
     max-height: calc(95% - 100px);

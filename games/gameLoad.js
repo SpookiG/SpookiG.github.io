@@ -40,10 +40,23 @@ document.addEventListener("DOMContentLoaded", function(){
 }*/
 
 window.onmessage = function(mess) {
-    let frameKey = mess.data.id;
-    frameHeightLookup[frameKey] = mess.data.height + "px";
+    if (mess.data.type === "pageData") {
+        let frameKey = mess.data.id;
+        frameHeightLookup[frameKey] = mess.data.height + "px";
 
-    adjustFrameSize(frameKey);
+        adjustFrameSize(frameKey);
+    } else if (mess.data.type === "expandImage") {
+        // copying over function displayImage from gameNotify.js
+
+        let modal = document.getElementById("myModal");
+        let modalImg = document.getElementById("modalImage");
+        let captionText = document.getElementById("caption");
+
+        modal.onclick = hideImage;
+        modal.style.display = "block";
+        modalImg.src = mess.data.src;
+        captionText.innerHTML = mess.data.alt;
+    }
 }
 
 
@@ -57,6 +70,13 @@ function adjustFrameSize(frameKey) {
             setTimeout(function() { adjustFrameSize(frameKey) }, 50);
         }
     }
+}
+
+
+function hideImage() {
+    let modal = document.getElementById("myModal");
+    modal.style.display = "none";
+    modal.onclick = null;
 }
 
 
