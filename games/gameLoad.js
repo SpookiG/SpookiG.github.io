@@ -43,8 +43,6 @@ window.onmessage = function(mess) {
     let frameKey = mess.data.id;
     frameHeightLookup[frameKey] = mess.data.height + "px";
 
-    console.log(mess.data.height);
-
     adjustFrameSize(frameKey);
 }
 

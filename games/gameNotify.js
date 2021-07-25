@@ -85,7 +85,7 @@ function collapse(toggleElement) {
         parentResize(content, content.scrollHeight);
     }
 
-    sendResizeMessage = false;
+    //sendResizeMessage = false;
     setTimeout(function() { sendResizeMessage = true; }, 50);
     sendPageData();
 }
@@ -99,8 +99,8 @@ function parentResize(content, heightDifference) {
         }
 
         parentContainer.style.maxHeight = (oldHeight + heightDifference) + "px";
-        console.log(heightDifference);
-        console.log(oldHeight + " + " + heightDifference + " = " + parentContainer.style.maxHeight);
+        //console.log(heightDifference);
+        //console.log(oldHeight + " + " + heightDifference + " = " + parentContainer.style.maxHeight);
 
         //height += heightDifference;
         parentResize(parentContainer, heightDifference);

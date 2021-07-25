@@ -260,8 +260,10 @@ input:checked + .button div { /*change text size*/
     width: 95%;
 }
 
-.pixel-art {
+.pixel-art {  /* both image rendering settings here because these are inconsistent between firefox and chrome ugh */
+    image-rendering: pixelated;
     image-rendering: crisp-edges;
+    
 }
   
 .clickable-image:hover {opacity: 0.7;}
@@ -298,6 +300,7 @@ input:checked + .button div { /*change text size*/
     max-width: 80%;
     min-width: 30%;
     max-height: calc(95% - 100px);
+    image-rendering: pixelated;
     image-rendering: crisp-edges;
   }
   
