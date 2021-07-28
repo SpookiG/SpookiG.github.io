@@ -40,8 +40,16 @@
             <!-- Collapsable sub-headings -->
             <button class="collapsible">Programming contributions (spoilers)</button>
             <div class="collapsable-content">
+                <br/>
                 <div class="game-box">
-                    <div class="game-image"></div>
+                    <div class="game-image">
+                        <img class="clickable-image" src="images/7codea.png" alt="Using a switch statement to check which part of the cutscene we are in. Stage 0 fades in the heading, stage 1 fades in the options to select from.">
+                        <button class="collapsible image-collapsable">More images</button>
+                        <div class="collapsable-content">
+                            <img class="clickable-image" src="images/7codeb.png" alt="Stage 2 is where the player selects one of the options, which applies different music to the game.">
+                            <img class="clickable-image" src="images/7codec.png" alt="Stage 3 fades out the heading, options, and whole canvas screen to reveal the level.">
+                        </div>
+                    </div>
                     <div class="game-details">
                         <h3>Hard coded cutscenes</h3>
                         <p>Coded an introduction cutscene to allow player to select a song at the start of the game. Similarly coded an ending cutscene.</p>
@@ -50,7 +58,9 @@
                 <br/>
 
                 <div class="game-box">
-                    <div class="game-image"></div>
+                    <div class="game-image">
+                        <img class="clickable-image" src="images/7coded.png" alt="This script is attached to every star to sync the audio each star produces. This is done by adding each star's audio source to a static list and then starting them all together once they have all stopped playing.">
+                    </div>
                     <div class="game-details">
                         <h3>Audio syncing</h3>
                         <p>Created an audio syncing script for the 7 different audio clips in order to make sure they all played in time with each other.</p>
@@ -59,7 +69,13 @@
                 <br/>
 
                 <div class="game-box">
-                    <div class="game-image"></div>
+                    <div class="game-image">
+                        <img class="clickable-image" src="images/7codee.png" alt="Note the added distance check at the top, there's some other code added but it's mixed in with the original shadow caster code so it's hard to highlight.">
+                        <button class="collapsible image-collapsable">More images</button>
+                        <div class="collapsable-content">
+                            <img class="clickable-image" src="images/7codef.png" alt="Note that 'com.unity.render-pipeline.universal' no longer points to a version number but a file instead, this means that I can add changes without them being overwritten by internal updates and refreshes.">
+                        </div>
+                    </div>
                     <div class="game-details">
                         <h3>Unity render pipeline optimization</h3>
                         <p>Edited the manifest.json to read the universal render pipeline from a local copied file, and edited the 2d shadow castor scripts for optimisation purposes.</p>
@@ -68,18 +84,26 @@
                 <br/>
 
                 <div class="game-box">
-                    <div class="game-image"></div>
+                    <div class="game-image">
+                        <img class="clickable-image" src="images/7codeg.png" alt="Player movement script. Note the use of functions to simplify the flow of the update script for character movement. The bottom code is storing a trail of positions to be used by the stars to follow the player.">
+                        <button class="collapsible image-collapsable">More images</button>
+                        <div class="collapsable-content">
+                            <img class="clickable-image" src="images/7codeh.png" alt="Star trail script. When the player collects a star it is given a position in the trail and then it will lerp to this position whenever it changes. The position is worked out using a static line length variable which increases each time a star is collected.">
+                        </div>
+                    </div>
                     <div class="game-details">
                         <h3>Player movement</h3>
                         <p>Grid based player movement and stars that follow in a trail 1-6 spaces behind the player.</p>
                     </div>
                 </div>
+                <br/>
             </div>
             
 
             <button class="collapsible">Music contributions (spoilers)</button>
             <div class="collapsable-content">
                 <p>The game was designed so that the player can select a different musician's song at the start. Created one of the songs that can be selected.</p>
+                <br/>
             </div>
             
 
@@ -95,7 +119,9 @@
                 <br/>
             
                 <div class="game-box">
-                    <div class="game-image"></div>
+                    <div class="game-image">
+                        <img class="clickable-image" src="images/7designa.png" alt="Player starts in the middle of the trees in the bottom centre of the screen. Attention was put on the size and placing of areas to feel natural whilst still being distinct. There is a large farm, frozen lake, and rock farm. There is also a small table area (centre), garden (left), and mountain path (top right).">
+                    </div>
                     <div class="game-details">
                         <h3>Level design</h3>
                         <p>Laid out a map area for the game, was described as "Easy to navigate" with the exception of finding the last collectable, which was hidden but could have been less hidden.</p>
