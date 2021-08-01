@@ -1,5 +1,6 @@
 var height = 0;
 var sendResizeMessage = true;
+var collapsableCollapsed = true;
 
 window.onload = function() {
     // change webpage CSS depending on if in an iframe or not
@@ -47,7 +48,7 @@ window.onload = function() {
 };
 
 window.onresize = function() {
-    if (sendResizeMessage) {
+    if (collapsableCollapsed) {
         height = document.body.scrollHeight;
         sendPageData();
     }
@@ -98,8 +99,8 @@ function collapse(toggleElement) {
         parentResize(content, content.scrollHeight);
     }
 
-    //sendResizeMessage = false;
-    setTimeout(function() { sendResizeMessage = true; }, 50);
+    collapsableCollapsed = false;
+    setTimeout(function() { collapsableCollapsed = true; }, 200);
     sendPageData();
 }
 
