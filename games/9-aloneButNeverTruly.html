@@ -50,7 +50,15 @@
 
                 <div class="game-box">
                     <div class="game-image">
-                        <img class="clickable-image" src="images/9b.png" alt="gameplay image">
+                        <img class="clickable-image" src="images/9codea.png" alt="Start function for the instance linker. This sets up the save data if it is not set up already, then it generates an ID for the currently running instance based on the save data, and then it runs a start up process.">
+                        <button class="collapsible image-collapsable">More images</button>
+                        <div class="collapsable-content">
+                            <img class="clickable-image" src="images/9codeb.png" alt="The application focus function is used to save and load shared data into the two open instances of the game. If the game was finished in the other instance, this will be picked up and a second ending cutscene will be enabled.">
+                            <img class="clickable-image" src="images/9codec.png" alt="The startup process. This checks the ID of the current instance, and then sets up the ships colour and position data. It also sets up the other ship's colour and position data if the shared data confirms that the other instance is open.">
+                            <img class="clickable-image" src="images/9coded.png" alt="The save data initialisation function and some helper functions used to avoid mistakes when saving booleans">
+                            <img class="clickable-image" src="images/9codee.png" alt="The CloseUp function, called as the game is exiting in order to reset save data for the instance being closed. Testing in the Unity editor revealed an issue where an instance might close without calling this function (maybe due to an error), so a diagnostics check is used to watch out for this discrepancy.">
+                            <img class="clickable-image" src="images/9codef.png" alt="In order to test in the Unity editor, the CloseUp function was set to only run when the game closes outside of the Unity editor. Then, this GameRefresher was created to manually access the CloseUp function in the editor when needed.">
+                        </div>
                     </div>
                     <div class="game-details">
                         <h3>Interaction between multiple open game instances</h3>

@@ -34,13 +34,26 @@
             <!-- Collapsable sub-headings -->
             <button class="collapsible">Programming contributions (spoilers)</button>
             <div class="collapsable-content">
+                <br/>
                 <div class="game-box">
-                    <div class="game-image"></div>
+                    <div class="game-image">
+                        <img class="clickable-image" src="images/8codea.png" alt="Abstract cutscene block object. Multiple different types of these are used to structure the events in a cutscene. Note that the public Run() can't be overridden and is used as a wrapper function to access _run(). This is to ensure Init() is reliably called for every cutscene block without having to manually code it in for every block.">
+                        <button class="collapsible image-collapsable">More images</button>
+                        <div class="collapsable-content">
+                            <img class="clickable-image" src="images/8codeb.png" alt="A RunnerBean monobehaviour is used to run a selected cutscene block in Unity's Update() loop. The RunnerBean object gives a single clear point from which the cutscene is run, it would be confusing if a cutscene block needed complex checks to see if it should use it's own Update() function.">
+                            <img class="clickable-image" src="images/8codec.png" alt="Container cutscener blocks are used to contain and structure the rest of the cutscene blocks. This block is a stepwise container, which takes all of the cutscene blocks in the child GameObjects and runs through them one at a time. There is also an async container that runs all of it's children simultaneously.">
+                            <img class="clickable-image" src="images/8coded.png" alt="This is one of the cutscene blocks that runs a specified action. In this case, this block is used to fade a light from one intensity level to another intensity level over a set amount of time before declaring itself finished.">
+                            <img class="clickable-image" src="images/8codee.png" alt="An example of the cutscene manager in use. You can see the RunnerBean is used to run the StepwiseContainer. This container will pick up and run all of the cutscene blocks in the immediate children of the cutscene GameObject highlighted on the left.">
+                            <img class="clickable-image" src="images/8codef.png" alt="Example continued. In the first child GameObject we can see the blocks that will be run in order. The cutscene will wait for 5 seconds before moving a UI rectangle (in this case a dialogue panel), after this some dialogue will start on this panel.">
+                            <img class="clickable-image" src="images/8codeg.png" alt="Example continued continued. This is the second child GameObject. The blocks here will be run immediately after the ones in the first child GameObject as these get picked up by the StepwiseContainer as well. Here we can see that a Behaviour is enabled (in this case an AudioSource), then some particles effects are started, etc ect.">
+                        </div>
+                    </div>
                     <div class="game-details">
                         <h3>Cutscene manager</h3>
                         <p>Created second edition of the fully configurable cutscene manager, this version is much more usable.</p>
                     </div>
                 </div>
+                <br/>
             </div>
             
 
