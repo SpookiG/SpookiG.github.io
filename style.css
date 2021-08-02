@@ -60,17 +60,26 @@ input {
 }
 
 
+.hobby-box {
+    margin-left: 30%;
+    margin-right: 30%;
+    background-color: rgb(236, 181, 117);
+    border: 3px solid rgb(236, 181, 117);
+    border-radius: .25rem;
+}
+
+
 
 
 /*banner stylings*/
-@media (min-width : /*650px*/17.2cm) {
+@media (min-aspect-ratio : 7/4) {
     .banner {
         display: flex;
         width: 100%;
     }
 }
 
-@media (max-width : /*650px*/17.2cm) {
+@media (max-aspect-ratio : 7/4) {
     .banner {
         display: flex;
         flex-direction: column;
@@ -78,7 +87,7 @@ input {
     }
 }
 
-@media (max-device-width : /*650px*/17.2cm) {
+@media (max-aspect-ratio : 7/4) {
     .banner {
         display: flex;
         flex-direction: column;
