@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>idk</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <script src="gameNotify.js"></script> 
+</head>
+<body>
+    <div id="page">
+        <div id="content">
+
+            <!-- Main heading -->
+            <div class="game-box">
+                <div class="game-image">
+                    <img class="clickable-image" src="images/8a.png" alt="gameplay image">
+                    <br/>
+                </div>
+                <div class="game-details">
+                    <h2>One hundred goodnights, and a thousand too many</h2>
+                    <p>This is a game about boundaries.</p>
+                    <p>Unity game<br/>Solo project</p>
+                    <br/><br/><br/><br/><br/>
+        
+                    <div class="banner top-banner bottom">
+                        <div class="banner-elem button"><a href="8-100Goodnights.html" target="_top"><div><span>Info!</span></div></a></div>
+                        <div class="banner-elem button"><a href="https://snoopyg.itch.io/100-goodnights" target="_blank"><div><span>Play!</span></div></a></div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+
+
+            <button class="collapsible">Evaluation</button>
+            <div class="collapsable-content">
+                <h3>Access the code repository <a href="https://github.com/SpookiG/1-patience" target="_blank">here</a></h3>
+                <p>For this game I decided to redo the cutscene manager used in Nyxmas Meetup and to focus on a completely cutscene driven game in order to do this. With the previous cutscene manager I had used scriptable objects for the cutscene blocks/actions. This meant that any data or interactables in a Unity scene that were needed by a cutscene block had to be passed all the way through from the top level monobehaviour on the gameobject, which led to rigid code in the blocks and an overly complicated pass through initializing system. With the new cutscene manager, I decided to make everything a monobehaviour so that cutscenes can be built up as a tree of gameobjects and components in the Unity scene editor.</p>
+                <p>This turned out very well. I'm particularly proud of some of the generic action blocks, such as an enabling/disabling action which simply enables/disables other Unity behaviours (sounds, sprite renderers, monobehaviours, etc). I'm also proud of the different container blocks, these pick up and run other cutscene blocks and allow for more dynamic structures in the cutscenes. There are synchronous containers, which run through cutscene blocks in order, asynchronous containers, which run all of the blocks at the same time, and conditional blocks, which run or skip over blocks based on different conditions.</p>
+                <p>Using these blocks I created some interesting cutscene features, including characters talking at the same time and a part where the cutscene changes depending on how long you wait until continuing the dialogue.</p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Fullscreen image thingy -->
+    <div id="myModal" class="modal">
+        <img class="modal-image" id="modalImage">
+        <div id="caption"></div>
+    </div>
+</body>
+</html>
+
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>idk</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <script src="gameNotify.js"></script> 
+</head>
+<body>
+    <div id="page">
+        <div id="content">
+
+            <!-- Main heading -->
+            <div class="game-box">
+                <div class="game-image">
+                    <img class="clickable-image" src="images/9a.png" alt="gameplay image">
+                    <button class="collapsible image-collapsable">More images</button>
+                    <div class="collapsable-content">
+                        <img class="clickable-image" src="images/9b.png" alt="gameplay image">
+                    </div>
+                    <br/>
+                </div>
+                <div class="game-details">
+                    <h2>Alone but never truly</h2>
+                    <p>This is a game about finding yourself. How you do that is something you will need to figure out!</p>
+                    <p>Unity game<br/>Team of 3 (including me)</p>
+                    <br/><br/><br/><br/><br/>
+        
+                    <div class="banner top-banner bottom">
+                        <div class="banner-elem button"><a href="9-aloneButNeverTruly.html" target="_top"><div><span>Info!</span></div></a></div>
+                        <div class="banner-elem button"><a href="https://globalgamejam.org/2021/games/alone-never-truely-2" target="_blank"><div><span>Play!</span></div></a></div>
+                    </div>
+
+        
+                </div>
+            </div>
+            <br/>
+
+            <button class="collapsible">Evaluation</button>
+            <div class="collapsable-content">
+                <h3>Access the code repository <a href="https://github.com/SpookiG/4-GGJ-LostAndFound" target="_blank">here</a></h3>
+                <p>This game was created for the Midlands Industry 2021 global game jam and I teamed up with a musician called Adam. Adam had the idea of having a ship flying in space, I wanted to add something meta so I discussed having the ship searching for itself and finding itself through opening up a second instance of the game.</p>
+                <p>This idea turned out very well in the end. We didn't need to design any levels because the game revolved around the single puzzle of realizing you could open the game twice, and I could copy in the cutscene manager to add context and push the player towards that solution.</p>
+                <p>Connecting the two game instances ended up being a very big task. Fortunately, when I discussed this with Adam, he had experience with Unity and art and was happy to create a few meteors and to code up some basic things like the player ship controller.</p>
+                <p>In order to connect the two game instances, I took advantage of Unity's PlayerPrefs saving system. To test this in the editor, I had to stop the application closing code from running in the editor, and then I had to create a tool that would allow me to either run that closing code or to reset all of the saved data manually. This was useful and it actually revealed a bug where if a game instance closed down without properly running the closing code (ie if the game crashed) it would leave the save data open without it being connected to a running instance. I had to check for this using a diagnostics check on the number of Unity instances running.</p>
+                <p>We brought on a writer, Izzy, near the end of the jam and she did a very good job of writing up the pieces of dialogue we needed very quickly. I had to request some edits from her first writeup to make it more clear to the player what they need to do, but her second writeup was spot on.</p>
+                <p>The game seems to have been received quite well, only three people worked on the game including me, and I did share it with 2-3 friends, but it seems to have gotten 19 likes on the global game jam website.</p>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Fullscreen image thingy -->
+    <div id="myModal" class="modal">
+        <img class="modal-image" id="modalImage">
+        <div id="caption"></div>
+    </div>
+</body>
+</html>
+
+

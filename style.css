@@ -21,7 +21,7 @@ h1, h2, h3, h4, h5, h6 {
 
 iframe {
     width: 100%;
-    height: 100%;
+    height: 0px;
     border: none;
     overflow: auto;
 
@@ -259,9 +259,23 @@ input:checked + .button div { /*change text size*/
     font-size: 1rem;
     border-radius: .2rem;
 }
+
+.collapsible:after {
+    content: '\002B';
+    color: white;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+  
+  
   
 .active, .collapsible:hover {
     background-color: #484358;
+}
+
+.active:after {
+    content: "\2212";
 }
   
 .collapsable-content {

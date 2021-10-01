@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>idk</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <script src="gameNotify.js"></script> 
+</head>
+<body>
+    <div id="page">
+        <div id="content">
+
+            <!-- Main heading -->
+            <div class="game-box">
+                <div class="game-image">
+                    <img class="clickable-image" src="images/3a.png" alt="gameplay image">
+                    <button class="collapsible image-collapsable">More images</button>
+                    <div class="collapsable-content">
+                        <img class="clickable-image" src="images/3b.png" alt="gameplay image">
+                        <img class="clickable-image" src="images/3c.png" alt="gameplay image">
+                        <img class="clickable-image" src="images/3d.png" alt="gameplay image">
+                    </div>
+                    <br/>
+                </div>
+                <div class="game-details">
+                    <h2>Float</h2>
+                    <p>You are stuck inside a ship probably (it doesn't really look like one) and you somehow have access to the ships main power but not anything else for some reason. Will you escape? Play to find out..</p>
+                    <p>Unity game<br/>Solo project</p>
+                    <br/><br/><br/><br/><br/>
+        
+                    <div class="banner top-banner bottom">
+                        <div class="banner-elem button"><a href="3-float.html" target="_top"><div><span>Info!</span></div></a></div>
+                        <div class="banner-elem button"><a href="https://snoopyg.itch.io/float" target="_blank"><div><span>Play!</span></div></a></div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+
+
+            <button class="collapsible">Evaluation</button>
+            <div class="collapsable-content">
+                <p>I created this game for a Ludum Dare 72 hour jam! I came up with an interesting mechanic in a similar way to the last game, by finding something in the Unity engine that I could change easily. In this case it was the gravity in the physics engine. The theme of the jam was Running Out Of Power, but I changed this slightly to Toggling Power and used that to contextualize the mechanic. The game is set on a space ship and toggling the power on the space ship also toggles the gravity on and off inside the ship.</p>
+                <p>I made some adjustments from my last game to optimize the non coding tasks, including making a lot of the animations with less frames and using Tiled2Unity, a level tiling tool. I did still overscope again at the start of the jam by creating animations for a box lifting mechanic, this time however I decided to not implement box lifting once I realized I would not have enough time to do it well.</p>
+                <p>For this game, I made it a goal to add sound effects. To do this, I learnt how to use sfxr and created some scripts to play sounds for when the player was walking and toggling the power. I did manage this in the end, however I learnt that there's an important balance to be had with sound effects. One player let me know that the sound effects that played when you toggled the power got annoying very fast, and that makes sense considering how the player has to toggle the power a lot, usually within a very short amount of time. In future games I made the plan to be more considerate with sound placements, especially when there's potential for a non background sound to be very repetitive.</p>
+                <p>Players were generally more positive than they were from the last game I made. People especially ranked the concept of toggling gravity as innovative, I ended up 107th out of 1361 jam submissions (so in the top 8%). I definitely feel like I could expand on this game a lot if I ever felt inclined to, I can see potential for something horror based, hiding from a monster by shutting off the power to make it dark, but also making yourself vulnerable from the lack of control when you have the power off.</p>
+                <p>You can find the Ludum Dare page with game rankings <a href="https://ldjam.com/events/ludum-dare/39/float" target="_blank">here</a></p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Fullscreen image thingy -->
+    <div id="myModal" class="modal">
+        <img class="modal-image" id="modalImage">
+        <div id="caption"></div>
+    </div>
+</body>
+</html>

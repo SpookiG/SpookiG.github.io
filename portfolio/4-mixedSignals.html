@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>idk</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <script src="gameNotify.js"></script> 
+</head>
+<body>
+    <div id="page">
+        <div id="content">
+
+            <!-- Main heading -->
+            <div class="game-box">
+                <div class="game-image">
+                    <img class="clickable-image" src="images/4a.jpg" alt="gameplay image">
+                    <button class="collapsible image-collapsable">More images</button>
+                    <div class="collapsable-content">
+                        <img class="clickable-image" src="images/4b.png" alt="gameplay image">
+                    </div>
+                    <br/>
+                </div>
+                <div class="game-details">
+                    <h2>Mixed signals</h2>
+                    <p>One bomb defusal robot but two controllers! (only works with 2 Xbox Controllers)</p>
+                    <p>Unity game<br/>Team of 2 people (including me)</p>
+                    <br/><br/><br/><br/><br/>
+        
+                    <div class="banner top-banner bottom">
+                        <div class="banner-elem button"><a href="4-mixedSignals.html" target="_top"><div><span>Info!</span></div></a></div>
+                        <div class="banner-elem button"><a href="https://globalgamejam.org/2018/games/mixed-signals-2" target="_blank"><div><span>Play!</span></div></a></div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+
+
+            <button class="collapsible">Evaluation</button>
+            <div class="collapsable-content">
+                <p>Mixed signals was created for another global game jam and was my second game done in a group. This time the team consisted of just me and Josh, one of the friends who I worked with on Total Reflection. This time I was still mostly in charge of art and level design but because of my increased experience with Unity and the lack of a third team member, I was also involved in some of the programing and game configurations.</p>
+                <p>My goal was to create a game that mixed the successes of Total Reflection with the successes of Float. Total Reflection was very well polished and good but the idea behind Float was really innovative and allowed for a wide variety of gameplay. The mechanic that we decided on was having two players controlling the same character. Because I wanted to add depth to that mechanic, whenever there were bugs I saw it as an opportunity to explore that mechanic further with Josh. In one case we had one player control movement direction and the other control the speed, but a bug meant that the speed player could add reverse speed to the character. I encouraged Josh to keep that in because it added a wrestling feeling between players and made communication more important moment to moment.</p>
+                <p>I was also in charge of porting levels from Tiled2Unity to Unity. Josh requested at one point to add breakable tiles, and I did underestimate how long it would take to add those. It seemed like a simple task on the surface but adding the breakable tiles involved diving into the Tiled2Unity code and some unclear documentation to figure out how to change the import process for specific tiles. From this I learnt to be mindful of tasks when I don't fully know how to accomplish them, as they may contain unexpected setbacks and difficulties.</p>
+                <p>Reception of the game was positive. We weren't rated on any official ranking system but we had a live demonstration session after the jam where we had two of the other devs give our game a try. It was a good atmosphere and there were big cheers from the whole room after they finished the first level.</p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Fullscreen image thingy -->
+    <div id="myModal" class="modal">
+        <img class="modal-image" id="modalImage">
+        <div id="caption"></div>
+    </div>
+</body>
+</html>

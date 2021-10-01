@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>idk</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <script src="gameNotify.js"></script> 
+</head>
+<body>
+    <div id="page">
+        <div id="content">
+
+            <!-- Main heading -->
+            <div class="game-box">
+                <div class="game-image">
+                    <img class="clickable-image" src="images/5a.png" alt="gameplay image">
+                    <br/>
+                </div>
+                <div class="game-details">
+                    <h2>Beyond the sky</h2>
+                    <p>The humans have finally wiped each other out. You are a laundry robot who no longer has any purpose. You have grabbed a ship and want to explore a little of the outside world before shutting down. Lets see where we end up!</p>
+                    <p>Warning! This game contains flashing lights.</p>
+                    <p>Unity game<br/>Team of 2 people (including me)</p>
+                    <br/><br/><br/><br/><br/>
+        
+                    <div class="banner top-banner bottom">
+                        <div class="banner-elem button"><a href="5-beyondTheSky.html" target="_top"><div><span>Info!</span></div></a></div>
+                        <div class="banner-elem button"><a href="https://snoopyg.itch.io/beyond-the-sky" target="_blank"><div><span>Play!</span></div></a></div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+
+
+            <button class="collapsible">Evaluation</button>
+            <div class="collapsable-content">
+                <p>This was a game I created with James, a friend from my hometown. He was fairly new to game development so we though it would be fun to make a game together. Unfortunately a mix of design decisions and overlooked facts (we only met up for a few hours on a few days each week) meant that the project took three weeks, and then I had to go back to university. I picked up the project again on my own the next year, James didn't want to work on it but was happy for me to finish it off.</p>
+                <p>After working with the limitations of the Tiled2Unity editor from Mixed Signals, I wanted to go a different route for level design. This time I created some sprites for girders and connectors and the plan was to build levels by simply dragging the girders and connectors together. This was actually a quite bad idea in retrospect. Creating levels this way meant that everything had to have a precise position and rotation, and it also meant that small adjustments to girders had a cascading effect, meaning more adjustments to everything connected to the girders. It took over a month for all the levels to be made.</p>
+                <p>Another change I decided on was that I wanted character movement that did not require multiple animations. This was a much more successful decision and I ended up with a very interesting movement that switched between a jumping bean and a jetpack.</p>
+                <p>I also created code for some adaptive tutorial UI, an end credits cutscene, and some shaders. By doing this I learnt about coroutines and Unity's shader language. The cutscene was quite difficult as I wanted the credits to start and end at specific points in the song that played, this was incredibly difficult to test as it required manually sitting through the whole song multiple times, making me realize that it's important to think through how code will be tested when you are writing it up. If the cutscene was coded differently, I may have been able to save a lot of testing and configuration time.</p>
+                <p>This game hasn't been ranked in a jam but many of my friends have played it and enjoyed it.</p>
+            </div>            
+        </div>
+    </div>
+
+    
+
+    <!-- Fullscreen image thingy -->
+    <div id="myModal" class="modal">
+        <img class="modal-image" id="modalImage">
+        <div id="caption"></div>
+    </div>
+</body>
+</html>

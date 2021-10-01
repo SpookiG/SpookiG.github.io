@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>idk</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../style.css">
+    <script src="gameNotify.js"></script> 
+</head>
+<body>
+    <div id="page">
+        <div id="content">
+
+            <!-- Main heading -->
+            <div class="game-box">
+                <div class="game-image">
+                    <img class="clickable-image" src="images/7a.png" alt="gameplay image">
+                    <button class="collapsible image-collapsable">More images</button>
+                    <div class="collapsable-content">
+                        <img class="clickable-image" src="images/7b.png" alt="gameplay image">
+                        <img class="clickable-image" src="images/7c.png" alt="gameplay image">
+                    </div>
+                    <br/>
+                </div>
+                <div class="game-details">
+                    <h2>A winter night wonder</h2>
+                    <p>Getting lost in the woods and seeking out a song that you once remembered.</p>
+                    <p>Entry for the Sgap General Art Project.</p>
+                    <p>Unity game<br/>Team of 4 people (including me)</p>
+                    <br/><br/><br/><br/><br/>
+        
+                    <div class="banner top-banner bottom">
+                        <div class="banner-elem button"><a href="7-winterNightWonder.html" target="_top"><div><span>Info!</span></div></a></div>
+                        <div class="banner-elem button"><a href="https://snoopyg.itch.io/winter-night-wonder" target="_blank"><div><span>Play!</span></div></a></div>
+                    </div>
+                </div>
+            </div>
+            <br/>
+
+            <button class="collapsible">Evaluation</button>
+            <div class="collapsable-content">
+                <h3>Access the code repository <a href="https://github.com/SpookiG/3-starCollection" target="_blank">here</a></h3>
+                <p>This was a very fun game to work on. It was created for the same collaborative art project as the last game but this time I had an artist to work with and we managed to have two musicians helping out by the end of the project.</p>
+                <p>Me and the artist decided on the idea of having stars to collect and having the stars build up a song as the player collected them. Then after realizing we needed music for this to work, we asked around for musicians who wanted to help out. I had to pitch what we were doing and communicate what was needed from the musicians, and it worked very well. We got some very good songs in the format we needed and the songs worked well with the game.</p>
+                <p>The artist provided sprites over a couple of weeks whilst I built up the level. The artist wasn't happy with how some of their trees had holes in them when they were next to each other, I had to explain that because of the way Unity tiling works and how I had to manually create and apply the overlapping tree sprites from the single tree I had, the work required to fill out all of the holes would likely add another week or two to the project.</p>
+                <p>At this point I hadn't rewritten the cutscene manager from the last game so I hard coded the introduction and ending cutscenes myself, using a switch statement to navigate which part of the cutscene was being run. I also used a system to keep the audio of each of the stars in sync, this had some issues and would create audible skips in the music, which is one of the complexities about audio looping that I need to bear in mind for future games.</p>
+                <p>I also decided to try out Unity's experimental 2D lighting system so that the stars could cast really atmospheric shadows. Because I was creating the game map in Unity's tile system, I had to create a tool that would let me generate all of the needed shadow casters based on a layer of tiles. Once this was done, the game was far too laggy to play properly, it seems that shadow casters aren't designed to be used in bulk like that. I had to add a redirect in the manifest.json to read the universal render pipeline from a local file so that I could apply an optimisation that switched off shadow casters that weren't close to the camera.</p>
+                <p>The game was showcased at the art project and people who played thought it was very cool.</p>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Fullscreen image thingy -->
+    <div id="myModal" class="modal">
+        <img class="modal-image" id="modalImage">
+        <div id="caption"></div>
+    </div>
+</body>
+</html>
