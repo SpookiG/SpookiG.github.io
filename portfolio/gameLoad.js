@@ -1,7 +1,9 @@
 var frameHeightLookup;
 var frameActive;
 var qualitySelection;
-var categorySelection;
+//var categorySelection;
+//var engineSelection;
+//var dimensionSelection;
 var loaded = false;
 
 document.addEventListener("DOMContentLoaded", function(){
@@ -15,9 +17,9 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
     qualitySelection = null;
-    categorySelection = new Set();
+    //categorySelection = new Set();
     updateQualitySelection();
-    updateCategorySelection();
+    //updateCategorySelection();
     loadSelections();
 
     //alert(frames[0].style.height.toString());
@@ -111,10 +113,10 @@ function qualitySelect() {
     loadSelections();
 }
 
-function categorySelect() {
-    updateCategorySelection();
-    loadSelections();
-}
+// function categorySelect() {
+//     updateCategorySelection();
+//     loadSelections();
+// }
 
 
 
@@ -153,43 +155,36 @@ function updateQualitySelection() {
     });
 }
 
-function updateCategorySelection() {
-    // build up a set containing the current form selection
-    let categoryForm = document.getElementById("category-banner").getElementsByTagName("input");
-    let formSelection = new Set();
-    Array.prototype.forEach.call(categoryForm, function(item) {
-        if (item.checked) {
-            formSelection.add(item.parentNode.innerText);
-        }
-    });
-    categorySelection = formSelection;
-}
+// function updateCategorySelection() {
+//     // build up a set containing the current form selection
+//     let categoryForm = document.getElementById("category-banner").getElementsByTagName("input");
+//     let formSelection = new Set();
+//     Array.prototype.forEach.call(categoryForm, function(item) {
+//         if (item.checked) {
+//             formSelection.add(item.parentNode.innerText);
+//         }
+//     });
+//     categorySelection = formSelection;
+// }
 
 function loadSelections() {
     let frames = document.getElementById("frames").getElementsByTagName("iframe");
     Array.prototype.forEach.call(frames, function(frame) {
-        // get 
-        let highlightedCategories = frame.getAttribute('data-highlight').split(" ");
-        let goodCategories = frame.getAttribute('data-good').split(" ");
         let visible = false;
 
         if (qualitySelection === "archive") {
             visible = true;
         } else {
             if (qualitySelection === "good work") {
-                Array.prototype.forEach.call(goodCategories, function(category) {
-                    if (categorySelection.has(category)) {
-                        visible = true;
-                    }
-                });
+                if (frame.getAttribute('data-quality') === "good") {
+                    visible = true;
+                }
             }
 
             // no need for a qualitySelection === highlights check here because highlights are also good work
-            Array.prototype.forEach.call(highlightedCategories, function(category) {
-                if (categorySelection.has(category)) {
-                    visible = true;
-                }
-            });
+            if (frame.getAttribute('data-quality') === "highlight") {
+                visible = true;
+            }
         }
         
         if (visible) {
