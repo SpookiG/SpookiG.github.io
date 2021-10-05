@@ -19,7 +19,18 @@ h1, h2, h3, h4, h5, h6 {
     text-align: center;
 }
 
-iframe {
+/* iframe {
+    
+} */
+
+.utube {
+    width: min(700px, 100%);
+    height: 395px;
+    margin-left: Calc((100% - min(700px, 100%)) / 2);
+    margin-right: Calc((100% - min(700px, 100%)) / 2);
+}
+
+.game-page {
     width: 100%;
     height: 0px;
     border: none;

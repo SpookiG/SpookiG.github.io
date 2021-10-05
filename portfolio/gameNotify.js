@@ -100,6 +100,10 @@ function collapse(toggleElement) {
 
         parentResize(content, -content.scrollHeight);
     } else {
+        if (content.getElementsByClassName("utube").length > 0) {
+            content.getElementsByClassName("utube")[0].src = content.getAttribute('data-video');
+        }
+
         content.style.maxHeight = content.scrollHeight + "px";
         height += content.scrollHeight;
 
